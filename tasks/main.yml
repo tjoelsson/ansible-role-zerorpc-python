@@ -1,0 +1,16 @@
+---
+# tasks file for zerorpc-python
+- name: ensure zerorpc installed
+  pip:
+    name: zerorpc
+    state: present
+    version: "{{ zerorpc_version }}"
+    executable: "{{ executable_pip }}"
+  environment:
+    PATH: /usr/local/bin:/usr/bin:{{ ansible_env.PATH }}
+
+- name: make zerorpc available on the path
+  alternatives:
+    name: zerorpc
+    link: /usr/bin/zerorpc
+    path: /usr/local/bin/zerorpc
