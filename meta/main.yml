@@ -14,4 +14,4 @@ galaxy_info:
   #   - 2015.09
   galaxy_tags: [amazon, centos6, python, zerorpc]
 dependencies:
-- role: python27
+- role: juwai.python27
